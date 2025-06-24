@@ -48,7 +48,7 @@ app.post('/webhook/whatsapp', async (req, res) => {
 
             // Agora, chama a API do Python passando o endereço da imagem recebida
             const processImageUrl = process.env.PROCESS_IMAGE_URL;
-            const imageUrl = `http://localhost:3001/images/original/${fileName}`;
+            const imageUrl = `${process.env.IMAGE_HOST_URL}/${fileName}`;
 
             // Tenta fazer a requisição para a API de processamento de imagem
             try {
