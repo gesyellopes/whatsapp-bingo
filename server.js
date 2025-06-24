@@ -4,6 +4,8 @@ const express = require('express');
 const path = require('path');
 const fs = require('fs');
 const axios = require('axios');  // Para fazer requisição HTTP para a API externa
+const mime = require('mime-types');
+
 
 // Controllers
 const webhookController = require('./controllers/webhookController');
@@ -143,32 +145,32 @@ app.get('/images/original/:file_name', (req, res) => {
     const { file_name } = req.params;
     const filePath = path.join(__dirname, 'public/original', file_name);
 
-    // Verifica se o arquivo existe
-    fs.exists(filePath, (exists) => {
-        if (!exists) {
-            return res.status(404).json({ error: "File not found" });
-        }
-
-        // Retorna a imagem
+    if (fs.existsSync(filePath)) {
+        const contentType = mime.lookup(filePath) || 'application/octet-stream';
+        res.setHeader('Content-Type', contentType);
         res.sendFile(filePath);
-    });
+    } else {
+        return res.status(404).json({ error: "File not found" });
+    }
 });
 
 // Rota para entregar imagem processada
 app.get('/images/processed/:file_name', (req, res) => {
     const { file_name } = req.params;
-    const filePath = path.join(__dirname, 'public/processed', file_name); // Corrigido o caminho da pasta de imagens processadas
+    const filePath = path.join(__dirname, 'public/processed', file_name);
 
-    // Verifica se o arquivo processado existe
-    fs.exists(filePath, (exists) => {
-        if (!exists) {
+    fs.access(filePath, fs.constants.F_OK, (err) => {
+        if (err) {
             return res.status(404).json({ error: "File not found" });
         }
 
-        // Retorna a imagem processada
+        const mimeType = mime.lookup(filePath) || 'application/octet-stream';
+        res.setHeader('Content-Type', mimeType);
+
         res.sendFile(filePath);
     });
 });
+
 
 // Inicia o servidor
 app.listen(port, () => {
