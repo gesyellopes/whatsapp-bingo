@@ -145,15 +145,20 @@ app.get('/images/original/:file_name', (req, res) => {
 
     fs.readFile(filePath, (err, data) => {
         if (err) {
-            return res.status(404).json({ error: "File not found" });
+            if (err.code === 'ENOENT') {
+                return res.status(404).json({ error: "File not found" });
+            } else {
+                console.error(`Error reading file ${filePath}:`, err); // Log the actual error
+                return res.status(500).json({ error: "Could not retrieve image due to server error." });
+            }
         }
 
         const mimeType = mime.lookup(filePath) || 'application/octet-stream';
         res.setHeader('Content-Type', mimeType);
+        res.setHeader('Content-Length', data.length); // Add Content-Length
         res.send(data);
     });
 });
-
 // Rota para entregar imagem processada
 app.get('/images/processed/:file_name', (req, res) => {
     const { file_name } = req.params;
