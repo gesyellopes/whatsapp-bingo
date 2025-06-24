@@ -20,4 +20,4 @@ COPY .env .env
 EXPOSE 3001
 
 # Definir o comando de inicialização da aplicação
-CMD ["node", "server.app"]
+CMD ["node", "server.js"]
