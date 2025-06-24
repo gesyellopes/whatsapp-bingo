@@ -11,6 +11,7 @@
   "description": "",
   "dependencies": {
     "axios": "^1.10.0",
+    "compression": "^1.8.0",
     "crypto": "^1.0.1",
     "dotenv": "^16.5.0",
     "express": "^5.1.0",

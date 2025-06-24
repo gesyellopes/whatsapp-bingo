@@ -5,6 +5,8 @@ const path = require('path');
 const fs = require('fs');
 const axios = require('axios');  // Para fazer requisição HTTP para a API externa
 const mime = require('mime-types');
+const compression = require('compression');
+
 
 
 // Controllers
@@ -15,6 +17,8 @@ const whatsappController = require('./controllers/whatsappController');  // Novo
 
 const app = express();
 const port = 3001;
+
+app.use(compression());
 
 // Middleware para parsear o corpo da requisição como JSON
 app.use(express.json({ limit: '50mb' })); 
@@ -139,50 +143,48 @@ app.post('/webhook/whatsapp', async (req, res) => {
 });
 
 
-app.use('/images/original', express.static(path.join(__dirname, 'public/original')));
-app.use('/images/processed', express.static(path.join(__dirname, 'public/processed')));
-
-
-/*
-
 // Rota para entregar imagem original
 app.get('/images/original/:file_name', (req, res) => {
     const { file_name } = req.params;
     const filePath = path.join(__dirname, 'public/original', file_name);
 
-    fs.readFile(filePath, (err, data) => {
+    fs.access(filePath, fs.constants.F_OK, (err) => {
         if (err) {
-            if (err.code === 'ENOENT') {
-                return res.status(404).json({ error: "File not found" });
-            } else {
-                console.error(`Error reading file ${filePath}:`, err); // Log the actual error
-                return res.status(500).json({ error: "Could not retrieve image due to server error." });
-            }
+            return res.status(404).json({ error: "File not found" });
         }
 
-        const mimeType = mime.lookup(filePath) || 'application/octet-stream';
-        res.setHeader('Content-Type', mimeType);
-        res.setHeader('Content-Length', data.length); // Add Content-Length
-        res.send(data);
+        res.sendFile(filePath, {
+            headers: {
+                'Content-Type': mime.lookup(filePath) || 'application/octet-stream',
+                'Content-Disposition': `inline; filename="${file_name}"`,
+                'Cache-Control': 'public, max-age=31557600',
+                'X-Content-Type-Options': 'nosniff'
+            }
+        });
     });
 });
+
 // Rota para entregar imagem processada
 app.get('/images/processed/:file_name', (req, res) => {
     const { file_name } = req.params;
     const filePath = path.join(__dirname, 'public/processed', file_name);
 
-    fs.readFile(filePath, (err, data) => {
+    fs.access(filePath, fs.constants.F_OK, (err) => {
         if (err) {
             return res.status(404).json({ error: "File not found" });
         }
 
-        const mimeType = mime.lookup(filePath) || 'application/octet-stream';
-        res.setHeader('Content-Type', mimeType);
-        res.send(data);
+        res.sendFile(filePath, {
+            headers: {
+                'Content-Type': mime.lookup(filePath) || 'application/octet-stream',
+                'Content-Disposition': `inline; filename="${file_name}"`,
+                'Cache-Control': 'public, max-age=31557600',
+                'X-Content-Type-Options': 'nosniff'
+            }
+        });
     });
 });
 
-*/
 
 // Inicia o servidor
 app.listen(port, () => {
