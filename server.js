@@ -138,6 +138,13 @@ app.post('/webhook/whatsapp', async (req, res) => {
 
 });
 
+
+app.use('/images/original', express.static(path.join(__dirname, 'public/original')));
+app.use('/images/processed', express.static(path.join(__dirname, 'public/processed')));
+
+
+/*
+
 // Rota para entregar imagem original
 app.get('/images/original/:file_name', (req, res) => {
     const { file_name } = req.params;
@@ -175,7 +182,7 @@ app.get('/images/processed/:file_name', (req, res) => {
     });
 });
 
-
+*/
 
 // Inicia o servidor
 app.listen(port, () => {
