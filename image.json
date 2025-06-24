@@ -1,0 +1,56 @@
+{
+    "data": {
+        "broadcast": false,
+        "fileBase64": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAIBAQIBAQICAgICAgICAwUDAwMDAwYEBAMFBwYHBwcGBwcICQsJCAgKCAcHCg0KCgsMDAwMBwkODw0MDgsMDAz/2wBDAQICAgMDAwYDAwYMCAcIDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAz/wAARCAABAAEDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD9/KKKKAP/2Q==",
+        "isGroup": false,
+        "isMedia": true,
+        "jid": "553898398292:5@s.whatsapp.net",
+        "key": {
+            "fromMe": false,
+            "id": "3F58E26A436F82047EC5",
+            "remoteJid": "553884122792@s.whatsapp.net"
+        },
+        "me": false,
+        "messageId": "3F58E26A436F82047EC5",
+        "messageTimestamp": 1750546468,
+        "messageType": "imageMessage",
+        "msgContent": {
+            "imageMessage": {
+                "caption": "",
+                "contextInfo": {
+                    "disappearingMode": {
+                        "initiator": "CHANGED_IN_CHAT"
+                    },
+                    "ephemeralSettingTimestamp": "0",
+                    "expiration": 0
+                },
+                "directPath": "/o1/v/t24/f2/m231/AQNGdiTUFgrAmw_o-AduSWesSq_5YsuYQtxY3_ZxrlL79CjCuWf-fLB1_2MIawWrhYRZV3jWq2MlWEfbhj9Igidx8OyyL16jy3KMZKvyuw?ccb=9-4&amp;oh=01_Q5Aa1wGA_9Cdoq5gx8o8Lrz1mWptegyi4is8s3EUt3oVQl_VCA&amp;oe=687E9708&amp;_nc_sid=e6ed6c",
+                "fileEncSha256": "4FY+x5RYp5kSeE4r+4gfUA/IR+e1GOehq96iJxVHYKk=",
+                "fileLength": "631",
+                "fileSha256": "koTZSOhtLpnzFIO19LOkw+ZeCm+8qajS24xglfgqw/U=",
+                "height": 1,
+                "jpegThumbnail": "/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAMCAgICAgMCAgIDAwMDBAYEBAQEBAgGBgUGCQgKCgkICQkKDA8MCgsOCwkJDRENDg8QEBEQCgwSExIQEw8QEBD/2wBDAQMDAwQDBAgEBAgQCwkLEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBD/wAARCAABAAEDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD9U6KKKAP/2Q==",
+                "mediaKey": "wGVessV8Xgt9JG6D7q4rEIelCQpVraIXbamRgJZMQsc=",
+                "mediaKeyTimestamp": "1750546467",
+                "mimetype": "image/jpeg",
+                "url": "https://mmg.whatsapp.net/o1/v/t24/f2/m231/AQNGdiTUFgrAmw_o-AduSWesSq_5YsuYQtxY3_ZxrlL79CjCuWf-fLB1_2MIawWrhYRZV3jWq2MlWEfbhj9Igidx8OyyL16jy3KMZKvyuw?ccb=9-4&amp;oh=01_Q5Aa1wGA_9Cdoq5gx8o8Lrz1mWptegyi4is8s3EUt3oVQl_VCA&amp;oe=687E9708&amp;_nc_sid=e6ed6c&amp;mms3=true",
+                "width": 1
+            },
+            "messageContextInfo": {
+                "deviceListMetadata": {
+                    "recipientKeyHash": "TtTAN0VbZFDueA==",
+                    "recipientTimestamp": "1750507895",
+                    "senderKeyHash": "k2vahLJQh+lAqg==",
+                    "senderTimestamp": "1750294136"
+                },
+                "deviceListMetadataVersion": 2
+            }
+        },
+        "pushName": "Gesyel Lopes",
+        "remoteJid": "553884122792",
+        "source": "unknown",
+        "urlMedia": "https://usc1.contabostorage.com/7a37d2f461814e758eedb3979de65af7:api-wa.me/2567xec639bc44e/image/jpeg/4eb52e3e208ed91f6846.jpg"
+    },
+    "instance": "2567xec639bc44e",
+    "type": "message"
+}

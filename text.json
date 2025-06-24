@@ -1,0 +1,43 @@
+{
+    "instance": "2567xec639bc44e",
+    "type": "message",
+    "data": {
+        "messageId": "3F5CF736CD199BE2D274",
+        "jid": "553898398292:5@s.whatsapp.net",
+        "me": false,
+        "isGroup": false,
+        "remoteJid": "553884122792",
+        "pushName": "Gesyel Lopes",
+        "key": {
+            "remoteJid": "553884122792@s.whatsapp.net",
+            "fromMe": false,
+            "id": "3F5CF736CD199BE2D274"
+        },
+        "messageType": "extendedTextMessage",
+        "msgContent": {
+            "extendedTextMessage": {
+                "text": "mensagem de texto",
+                "contextInfo": {
+                    "expiration": 0,
+                    "ephemeralSettingTimestamp": "0",
+                    "disappearingMode": {
+                        "initiator": "CHANGED_IN_CHAT"
+                    }
+                }
+            },
+            "messageContextInfo": {
+                "deviceListMetadata": {
+                    "senderKeyHash": "k2vahLJQh+lAqg==",
+                    "senderTimestamp": "1750294136",
+                    "recipientKeyHash": "TtTAN0VbZFDueA==",
+                    "recipientTimestamp": "1750507895"
+                },
+                "deviceListMetadataVersion": 2
+            }
+        },
+        "messageTimestamp": 1750546277,
+        "source": "unknown",
+        "broadcast": false,
+        "isMedia": false
+    }
+}
