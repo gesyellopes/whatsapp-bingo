@@ -15,7 +15,9 @@ const app = express();
 const port = 3001;
 
 // Middleware para parsear o corpo da requisição como JSON
-app.use(express.json());
+app.use(express.json({ limit: '50mb' })); 
+app.use(express.urlencoded({ limit: '50mb', extended: true }));
+
 
 // Rota para ouvir o Webhook do WhatsApp
 app.post('/webhook/whatsapp', async (req, res) => {
