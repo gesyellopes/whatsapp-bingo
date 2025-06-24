@@ -143,13 +143,15 @@ app.get('/images/original/:file_name', (req, res) => {
     const { file_name } = req.params;
     const filePath = path.join(__dirname, 'public/original', file_name);
 
-    if (fs.existsSync(filePath)) {
-        const contentType = mime.lookup(filePath) || 'application/octet-stream';
-        res.setHeader('Content-Type', contentType);
-        res.sendFile(filePath);
-    } else {
-        return res.status(404).json({ error: "File not found" });
-    }
+    fs.readFile(filePath, (err, data) => {
+        if (err) {
+            return res.status(404).json({ error: "File not found" });
+        }
+
+        const mimeType = mime.lookup(filePath) || 'application/octet-stream';
+        res.setHeader('Content-Type', mimeType);
+        res.send(data);
+    });
 });
 
 // Rota para entregar imagem processada
@@ -157,17 +159,17 @@ app.get('/images/processed/:file_name', (req, res) => {
     const { file_name } = req.params;
     const filePath = path.join(__dirname, 'public/processed', file_name);
 
-    fs.access(filePath, fs.constants.F_OK, (err) => {
+    fs.readFile(filePath, (err, data) => {
         if (err) {
             return res.status(404).json({ error: "File not found" });
         }
 
         const mimeType = mime.lookup(filePath) || 'application/octet-stream';
         res.setHeader('Content-Type', mimeType);
-
-        res.sendFile(filePath);
+        res.send(data);
     });
 });
+
 
 
 // Inicia o servidor
