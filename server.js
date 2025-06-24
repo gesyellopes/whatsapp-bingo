@@ -52,11 +52,13 @@ app.post('/webhook/whatsapp', async (req, res) => {
             const processImageUrl = process.env.PROCESS_IMAGE_URL;
             const imageUrl = `${process.env.IMAGE_HOST_URL}/${fileName}`;
 
+            console.log(imageUrl);
+
             // Tenta fazer a requisição para a API de processamento de imagem
             try {
                 const processResponse = await axios.post(processImageUrl, { image_url: imageUrl });
 
-                console.log(processResponse);
+                //console.log(processResponse);
 
                 // Verifica se a resposta foi bem-sucedida
                 if (!processResponse.data.success) {
