@@ -56,6 +56,8 @@ app.post('/webhook/whatsapp', async (req, res) => {
             try {
                 const processResponse = await axios.post(processImageUrl, { image_url: imageUrl });
 
+                console.log(processResponse);
+
                 // Verifica se a resposta foi bem-sucedida
                 if (!processResponse.data.success) {
                     await TicketStub.update(
