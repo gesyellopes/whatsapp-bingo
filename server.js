@@ -114,7 +114,7 @@ app.post('/webhook/whatsapp', async (req, res) => {
                 }
             } catch (axiosError) {
                 // Tratar erro específico da requisição do axios
-                //console.error('Erro ao processar a imagem na API:', axiosError);
+                console.error('Erro ao processar a imagem na API:', axiosError);
                 return res.status(500).json({
                     success: false,
                     message: 'Erro ao chamar a API de processamento de imagem'
