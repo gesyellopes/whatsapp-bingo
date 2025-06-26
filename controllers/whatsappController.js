@@ -3,7 +3,7 @@ const axios = require('axios');
 // Função para enviar mensagem de texto para o WhatsApp
 async function sendTextMessage(to, text) {
     try {
-        const apiUrl = `${process.env.API_WHATSAPP_URL}/${process.env.WHATSAPP_KEY}/message/text`;
+        const apiUrl = `${process.env.API_WHATSAPP}/${process.env.KEY_WHATSAPP_API}/message/text`;
         const messageBody = {
             to: to,
             text: text
@@ -26,7 +26,7 @@ async function sendTextMessage(to, text) {
 // Função para enviar mensagem com imagem para o WhatsApp
 async function sendImageMessage(to, url, caption) {
     try {
-        const apiUrl = `${process.env.API_WHATSAPP_URL}/${process.env.WHATSAPP_KEY}/message/image`;
+        const apiUrl = `${process.env.API_WHATSAPP}/${process.env.KEY_WHATSAPP_API}/message/image`;
         const messageBody = {
             to: to,
             url: url,
