@@ -67,7 +67,7 @@ app.post('/webhook/whatsapp', async (req, res) => {
                 message_status: 'read'
             });
 
-            await whatsappController.sendTextMessage(from_number, `O canhoto *${responseData.filename}* foi processado com sucesso`);
+            await whatsappController.sendTextMessage(from_number, `O canhoto *${responseData.ticket_number}* foi processado com sucesso`);
         } else {
             await newTicket.update({
                 processed_file: fileStorageName || null,
