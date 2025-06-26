@@ -62,7 +62,7 @@ app.post('/webhook/whatsapp', async (req, res) => {
         if (responseData.success) {
             await newTicket.update({
                 processed_file: responseData.file_id,
-                ticket_number: responseData.filename,
+                ticket_number: responseData.ticket_number,
                 processed_status: 'processed',
                 message_status: 'read'
             });
