@@ -29,12 +29,12 @@ app.post('/webhook/whatsapp', async (req, res) => {
             const existingTicket = await TicketStub.findOne({
                 where: { message_id: analyzeWhatsapp.message_id }
             });
-        }
 
-        if (existingTicket) {
-            return res.status(200).json({ success: true, message: 'Mensagem já processada anteriormente.' });
+            if (existingTicket) {
+                return res.status(200).json({ success: true, message: 'Mensagem já processada anteriormente.' });
+            }
         }
-
+        
 
         if (analyzeWhatsapp.type !== 'image') {
             return res.status(200).json(analyzeWhatsapp);
