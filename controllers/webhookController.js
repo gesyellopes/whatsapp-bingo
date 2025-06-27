@@ -33,6 +33,7 @@ class WebhookController {
 
 
             response = {
+                "message_id": messageId, // ID da mensagem
                 "type": "image", // Tipo da mensagem
                 "messageId": messageId, // ID da mensagem
                 "from_number": remoteJid, // Telefone do remetente
