@@ -24,10 +24,10 @@ app.post('/webhook/whatsapp', async (req, res) => {
         const analyzeWhatsapp = await webhookController.analyzeWebhook(req, res);
 
 
-        if (analyzeWhatsapp.messageId) {
+        if (analyzeWhatsapp.message_id) {
             // ✅ Verifica se já existe um registro com esse message_id
             const existingTicket = await TicketStub.findOne({
-                where: { message_id: analyzeWhatsapp.messageId }
+                where: { message_id: analyzeWhatsapp.message_id }
             });
         }
 
