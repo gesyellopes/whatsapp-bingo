@@ -91,7 +91,7 @@ app.post('/webhook/whatsapp', async (req, res) => {
                 : null;
 
             if (errorImageUrl) {
-                await whatsappController.sendImageMessage(from_number, errorImageUrl, "A imagem enviada não pode ser processada. Envie novamente");
+                await whatsappController.sendImageMessage(from_number, errorImageUrl, "Não foi possível processar sua imagem automaticamente. Vamos verifica-la manualmente e, caso necessário, solicitaremos o reenvio.");
             } else {
                 await whatsappController.sendTextMessage(from_number, "A imagem enviada não pode ser processada. Envie novamente");
             }
