@@ -28,10 +28,14 @@ build/
 .idea/
 .vscode/
 
+#GDRIVE FOLD
+public/GDRIVE
+public/lote
+
 # Arquivos gerados pelo sistema operacional
 .DS_Store
 Thumbs.db
 
 # Arquivos de configuração de IDE (se aplicável)
 *.swp
-*.swo
+*.swo    
